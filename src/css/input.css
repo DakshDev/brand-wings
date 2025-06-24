@@ -9,12 +9,14 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
+	color: #ffffff;
 }
 
 
 html, body{
 	height: 100%;
 	width: 100%;
+	background: var(--themeClr);
 }
 
 
@@ -25,4 +27,23 @@ html, body{
 	--priClr: #FE7743;
 	--secClr: #273F4F;
 	--mainClr: #000000;
+}
+
+
+
+#home_bg_img{
+	background-image: url("/assets/images/background.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+
+
+
+
+
+
+/* Custom Styles */
+.linkButton{
+	@apply px-4 py-1 hover:underline h-full flex items-center;
 }
