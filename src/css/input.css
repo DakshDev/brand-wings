@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+
+
+.theme{
+	--themeClr: #EFEEEA;
+	--themeClr2: #FAF6E9;
+	--priClr: #FE7743;
+	--secClr: #273F4F;
+	--mainClr: #000000;
+}
