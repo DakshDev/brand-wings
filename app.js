@@ -36,6 +36,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('home'); // renders views/home.ejs
 });
+app.get('/about', (req, res) => {
+  res.render('about'); // Renders views/about.ejs
+});
 
 // Start server
 app.listen(3000, () => console.log('Live...'));
