@@ -5,19 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/output.css" rel="stylesheet">
 </head>
-<body class="theme">
+<body class="theme" id="home_bg_img">
+  <div class="blurBg"></div>
 
-  <div class="h-screen w-full grid gap-5 items-start" id="home_bg_img">
-    <%- include('components/header') %> 
-    <div class="flex gap-5 justify-between items-center content-center px-20">
-        <div class="w-1/2 flex flex-col gap-4">
-          <h1 class="text-7xl font-bold">Helping You Build.</h1>
-          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur error ipsa, aliquam, eaque perferendis id ab totam aliquid ipsam commodi voluptatum, tempore modi beatae! Repellat asperiores sunt aspernatur illum distinctio dignissimos aut laudantium a delectus, esse impedit repellendus! Quae laborum corrupti laboriosam blanditiis fugit fuga. Neque consequatur voluptas id quidem.</p>
+
+  <div class="h-screen relative z-10">
+    <!-- Header Section -->
+    <%- include('components/header') %>
+
+    <!-- Content -->
+    <div class="relative h-full">
+      <!-- Hero Section -->
+      <section class="h-full p-20 py-32 flex justify-center items-center">
+        <div class="w-[70%] grid gap-10">
+          <div> <h1 class="text-5xl font-extrabold capitalize">Digital Agency That, <br>Thrives on Your Success.</h1> </div>
+          <div class="flex justify-end"> <p class="w-1/2 text-xl">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
         </div>
-        <div class="w-1/2 flex justify-center">
-            <div class="rounded-full size-80 bg-white text-black flex justify-center items-center">3D object</div>
+      </section>
+      <!-- Digital Services -->
+      <section class="p-20 py-32 bg-themeClr2">
+        <div class="flex flex-col justify-center items-center gap-20">
+          <h1 class="text-center text-5xl font-semibold text-mainClr">Our Digital Solutions</h1>
+          <div class="flex flex-wrap justify-center items-center gap-5">
+            <%- include("./components/serviceBox", {title: "web development"}) %>
+            <%- include("./components/serviceBox", {title: "graphic designing"}) %>
+            <%- include("./components/serviceBox", {title: "web designing"}) %>
+            <%- include("./components/serviceBox", {title: "seo"}) %>
+            <%- include("./components/serviceBox", {title: "app development"}) %>
+            <%- include("./components/serviceBox", {title: "ai chat bot"}) %>
+          </div>
         </div>
+      </section>
+      <!-- About Us -->
+      <section class="p-20 py-32 bg-priClr flex justify-center">
+        <div class="flex max-w-[1440px]">
+          <!-- left -->
+          <div class="w-1/2 grid content-start items-start gap-10 pr-20">
+           <div class="grid gap-5">
+             <h1 class="text-5xl font-semibold text-mainClr">About Us</h1>
+              <p class="text-mainClr text-2xl">We are a team of 40 web experts with over 12 years of experience in website building and marketing to help businesses grow online.</p>
+           </div>
+           <div class="grid gap-2.5">
+             <h3 class="text-2xl font-semibold text-mainClr">Our mission</h3>
+              <p class="text-mainClr text-lg">Our mission is to empower our clients to use the internet to its full potential by providing affordable, effective, custom design and marketing solutions..</p>
+           </div>
+           <div class="grid gap-2.5">
+              <h3 class="text-2xl font-semibold text-mainClr">Our vision</h3>
+              <p class="text-mainClr text-lg">Our vision is to become a global leader in providing the best and unique web design and marketing services to improve our client’s productivity and business strength.</p>
+           </div>
+          </div>
+          <!-- right -->
+          <div class="flex justify-center items-center">
+            <img class="w-3/4 relative top-52" src="/assets/images/img-2.jpg" alt="">
+          </div>
+        </div>
+      </section>
+      <!-- Why Choose Us Page -->
+      <section class="p-20 py-32 bg-themeClr2">
+        <div class="flex flex-col gap-10">
+          <h1 class="text-5xl font-semibold text-mainClr">Why Choose Us?</h1>
+          <p class="text-lg font-semibold text-mainClr">We are the right term for your business. We have the expertise and knowledge to offer impartial advice and services at an honest price.</p>
+          <p class="text-lg text-mainClr">With us you’ll feel heard. We listen to our client requirements and then select the right solution that fits. We care for your business as our own. We take a sincere interest in it and genuinely want to help your company reach its potential.</p>
+        </div>
+      </section>
+      <!-- Have a Project -->
+      <section class="p-20 py-32 flex flex-col gap-20">
+        <div class="bg-priClr rounded-md flex relative">
+          <div class="w-1/3 shrink-0 grid content-between p-10">
+            <div class="flex flex-col gap-10">
+              <h1 class="text-4xl font-semibold text-mainClr">Have a Project on mind?</h1>
+              <p class="text-lg text-mainClr">We can help you bring your ideas to life. Let’s talk about what we can build and raise together.</p>
+            </div>
+            <div>
+              <button class="secBtn">Contact With Us</button>
+            </div>
+          </div>
+          <div class="w-full relative">
+            <div class="absolute left-0 top-0 w-full h-full bg-[#0000009d]"></div>
+            <img class="w-full" src="/assets/images/img3.jpg" alt="">
+          </div>
+        </div>
+        <div class="flex gap-20 items-center">
+          <div class="w-1/2">
+            <h1 class="text-6xl font-bold">Let us together build a flourishing business</h1>
+          </div>
+          <div class="w-1/2">
+            <p class="text-xl">When connected with us, you aren’t growing your business alone. We have your back and put in our best to contribute to the growth of your entire team and organization. So, if you are looking for the right agency that’ll help you build a good online presence and bring in more conversions and revenue, we are right here!</p>
+          </div>
+        </div>
+      </section>
+      <!-- Subscribe -->
+      <section class="p-20 bg-themeClr2 flex justify-center">
+        <div class="max-w-[1440px] w-full flex gap-10 items-center justify-between">
+          <h1 class="text-5xl text-mainClr font-semibold">Subscribe For Updates</h1>
+          <div> <input type="text" name="subscribe field" class="border border-mainClr p-4 rounded-md text-xl w-80 text-mainClr" placeholder="Enter Your Email"> <button class="p-4 bg-priClr text-mainClr text-xl capitalize ">i'm interested</button> </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <%- include('components/footer') %>
     </div>
+    
+    
   </div>
     
 

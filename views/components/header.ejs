@@ -8,40 +8,19 @@
 <body>
 
 
-	<nav class=" flex justify-center items-center p-5">
-		<div class="w-[1280px] max-xl:w-full bg-[#ffffff44] backdrop-blur-xl rounded-full flex justify-between items-center py-4 px-10">
-			<h1 class="text-2xl font-bold">Brand Wings</h1>
+	<nav class="fixed bg-[#0000006f] backdrop-blur-xl left-0 top-0 z-50 w-full h-20 flex justify-center items-center p-5">
+		<div class="w-[1280px] max-xl:w-full rounded-full flex justify-between items-center py-4 px-10">
+			<h1 class="text-3xl font-bold">Brand Wings</h1>
 			<div class="flex justify-center items-center gap-2 h-full">
-				<a href="#" class="linkButton">Home</aHom>
+				<a href="/" class="linkButton">Home</a>
 				<a href="/about" class="linkButton">About Us</a>
-				<div id="ourSolutionRef" class="relative h-full flex items-center justify-center">
-					<a href="#" class="linkButton">Our Solutions</a>
-					<div id="toggleBox" style="display: none;" class="absolute left-0 top-full p-2 bg-secClr grid gap-1">
-						<a href="#" class="linkButton">Web&nbsp;Development</a>
-						<a href="#" class="linkButton">App&nbsp;Development</a>
-						<a href="#" class="linkButton">SEO</a>
-						<a href="#" class="linkButton">Chat&nbsp;Bot</a>
-						<a href="#" class="linkButton">Graphic&nbsp;Designing</a>
-					</div>
-				</div>
+				<a href="#" class="linkButton">Our Services</a>
 				<a href="#" class="linkButton">Contact Us</a>
 			</div>
+			<div><button class="priBtn">Action Button</button></div>
 		</div>
   </nav>
 
-
-
-
-	<script>
-		// Toggle Button
-		const toggleBtn = document.getElementById("ourSolutionRef");
-		const toggleBox = document.getElementById("toggleBox");
-		toggleBox.addEventListener("mouseenter", () =>toggleBox.style.display = "block")
-		toggleBtn.addEventListener("mouseenter", () =>toggleBox.style.display = "block")
-		toggleBtn.addEventListener("mouseleave", () => {
-			toggleBox.style.display = "none";
-		})
-	</script>
     
 </body>
 </html>
