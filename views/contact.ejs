@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body id="contact_bg_img" class="theme">
+
+
+  
+  <div class="blurBg"></div>
+
+
+   <div class="h-screen relative z-10" >
+    <!-- Header Section -->
+    <%- include('components/header') %>
+    <!-- Hero Section -->
+    <section class="h-full p-20 py-32 flex justify-center items-center">
+      <div class="w-[70%] grid gap-10">
+        <h1 class="text-6xl font-open_sana_3 uppercase text-center">Contact Us We are here to help</h1>
+        <p class="w-1/2 m-auto text-center text-lg">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+      </div>
+    </section>
+    <!-- Contact Page -->
+    <section class="bg-white flex justify-center">
+      <div class="p-20 py-32 max-w-[1280px] w-full">
+          <form action="#" class="space-y-5">
+              <div>
+                  <label for="email" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Your email</label>
+                  <input type="email" id="email" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="example@gmail.com" required>
+              </div>
+              <div>
+                  <label for="subject" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Subject</label>
+                  <input type="text" id="subject" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Let us know how we can help you" required>
+              </div>
+              <div class="sm:col-span-2">
+                  <label for="message" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Your message</label>
+                  <textarea id="message" rows="6" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr resize-none w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Leave a comment..."></textarea>
+              </div>
+              <button type="submit" class="secBtn p-4 capitalize">Send message</button>
+          </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <%- include('components/footer') %>
+  </div>
+  
+
+
+</body>
+</html>

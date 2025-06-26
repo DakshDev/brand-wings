@@ -50,6 +50,12 @@ html, body{
 	background-attachment: fixed;
 	background-size: cover;
 }
+#contact_bg_img{
+	background-image: url("/assets/images/contact-img.jpg");
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: cover;
+}
 
 
 
