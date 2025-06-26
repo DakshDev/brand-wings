@@ -3,12 +3,25 @@
 @tailwind utilities;
 
 
+@font-face {
+	font-family: open_sana_1;
+	src: url(/assets/fonts/quick_sand/Quicksand-Regular.ttf);
+}
+@font-face {
+	font-family: open_sana_2;
+	src: url(/assets/fonts/quick_sand/Quicksand-Medium.ttf);
+}
+@font-face {
+	font-family: open_sana_3;
+	src: url(/assets/fonts/quick_sand/Quicksand-Bold.ttf);
+}
+
 
 *{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: open_sana_1;
 	color: var(--themeClr);
 }
 
@@ -52,8 +65,8 @@ html, body{
 	@apply fixed left-0 top-0 w-full h-full bg-[#0000009d] backdrop-blur-sm;
 }
 .priBtn{
-	@apply px-4 py-2 rounded-md font-semibold bg-priClr text-mainClr hover:opacity-90 active:opacity-100
+	@apply px-4 py-2 rounded-md bg-priClr text-mainClr hover:opacity-90 active:opacity-100
 }
 .secBtn{
-	@apply px-4 py-2 rounded-sm border border-mainClr text-mainClr
+	@apply px-4 py-2 rounded-md border border-mainClr text-mainClr hover:bg-mainClr hover:text-themeClr active:scale-95 transition-colors ease-in-out
 }

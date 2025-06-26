@@ -9,6 +9,11 @@ module.exports = {
         "themeClr": "var(--themeClr)",
         "themeClr2": "var(--themeClr2)",
         "mainClr": "var(--mainClr)"
+      },
+      fontFamily: {
+        "open_sana_1": "open_sana_1",
+        "open_sana_2": "open_sana_2",
+        "open_sana_3": "open_sana_3",
       }
     },
   },
