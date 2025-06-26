@@ -7,17 +7,16 @@
   <link rel="stylesheet" href="/css/output.css">
 </head>
 <body id="contact_bg_img" class="theme">
-
-
-  
   <div class="blurBg"></div>
 
 
-   <div class="h-screen relative z-10" >
-    <!-- Header Section -->
-    <%- include('components/header') %>
-    <!-- Hero Section -->
-    <section class="h-full p-20 py-32 flex justify-center items-center">
+  <!-- Header Section -->
+  <%- include('components/header') %>
+
+   <div class="relative z-10" data-scroll-container-contact>
+   <div class="relative h-full">
+     <!-- Hero Section -->
+    <section class="h-screen p-20 py-32 flex justify-center items-center">
       <div class="w-[70%] grid gap-10">
         <h1 class="text-6xl font-open_sana_3 uppercase text-center">Contact Us We are here to help</h1>
         <p class="w-1/2 m-auto text-center text-lg">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
@@ -45,9 +44,20 @@
     </section>
     <!-- Footer -->
     <%- include('components/footer') %>
+   </div>
   </div>
   
 
 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container-contact]'),
+      smooth: true,
+      multiplier: 1,
+    });
+  </script>
 </body>
 </html>

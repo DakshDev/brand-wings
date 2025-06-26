@@ -71,7 +71,7 @@ html, body{
 	@apply fixed left-0 top-0 w-full h-full bg-[#0000009d] backdrop-blur-sm;
 }
 .priBtn{
-	@apply px-4 py-2 rounded-md bg-priClr text-mainClr hover:opacity-90 active:opacity-100
+	@apply px-4 py-2 rounded-md bg-priClr font-open_sana_2 text-mainClr hover:opacity-90 active:opacity-100
 }
 .secBtn{
 	@apply px-4 py-2 rounded-md border border-mainClr text-mainClr hover:bg-mainClr hover:text-themeClr active:scale-95 transition-colors ease-in-out
