@@ -1,33 +1,32 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/css/output.css" rel="stylesheet">
-  <!-- loco motive -->
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/output.css">
+  <!-- locomotive -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 </head>
-<body class="theme" id="home_bg_img">
+<body class="theme" id="service_bg_img">
   <div class="blurBg"></div>
 
-
-  <!-- Header Section -->
-  <%- include('components/header') %> 
+  <!-- Header -->
+  <%- include("./components/header")%>
   <div class="relative" data-scroll-container>
-    <!-- Content -->
     <div class="relative h-full">
       <!-- Hero Section -->
       <section class="h-screen p-20 py-32 flex justify-center items-center">
         <div class="w-[70%] grid gap-10">
-          <div> <h1 class="text-6xl font-open_sana_3 capitalize">Digital Agency That, <br>Thrives on Your Success.</h1> </div>
-          <div class="flex justify-end"> <p class="w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
+          <h1 class="text-6xl font-open_sana_3 uppercase text-center">Our Services</h1>
+          <p class="w-9/12 m-auto text-center text-lg">We offer a wide range of services to help you achieve your goals. From web development to digital marketing, we have the expertise to take your business to the next level.</p>
         </div>
       </section>
-      <!-- Digital Services -->
-      <section class="p-20 py-32 bg-themeClr2 flex justify-center">
+      <!-- Our Services -->
+      <section class="bg-themeClr2 p-20 py-32 w-full flex justify-center">
         <div class="flex flex-col justify-center items-center gap-20 max-w-[1440px] w-full">
-          <h1 class="text-center text-5xl font-open_sana_2 text-mainClr">Our Digital Solutions</h1>
-          <div class="grid grid-cols-3 gap-5">
+          <h1 class="text-center text-5xl font-open_sana_2 text-mainClr">How can we help you?</h1>
+          <div class="grid grid-cols-3 gap-8">
             <%- include("./components/serviceBox", {title: "creative design", para: "Our team of professional graphic and web designers will help you with unique and creative logo and website designs that will match your business." }) %>
             <%- include("./components/serviceBox", {title: "Web Development", para: "We help you develop the right website with a good user interface built after a lot of research in the industry to help you make the best out of it." }) %>
             <%- include("./components/serviceBox", {title: "Branding & Marketing", para: "Need help with branding and marketing to reach out to a larger audience? We can help you create a brand presence and marketing efforts." }) %>
@@ -37,39 +36,24 @@
           </div>
         </div>
       </section>
-      <!-- About Us -->
-      <section class="p-20 py-32 bg-priClr flex justify-center">
-        <div class="flex max-w-[1440px]">
-          <!-- left -->
-          <div class="w-1/2 grid content-start items-start gap-14 pr-20">
-           <div class="grid gap-5">
-             <h1 class="text-5xl font-open_sana_3 text-mainClr">About Us</h1>
-              <p class="text-mainClr text-2xl">We are a team of 40 web experts with over 12 years of experience in website building and marketing to help businesses grow online.</p>
-           </div>
-           <div class="grid gap-2.5">
-             <h3 class="text-2xl font-open_sana_2 text-mainClr">Our mission</h3>
-              <p class="text-mainClr text-lg">Our mission is to empower our clients to use the internet to its full potential by providing affordable, effective, custom design and marketing solutions..</p>
-           </div>
-           <div class="grid gap-2.5">
-              <h3 class="text-2xl font-open_sana_2 text-mainClr">Our vision</h3>
-              <p class="text-mainClr text-lg">Our vision is to become a global leader in providing the best and unique web design and marketing services to improve our client’s productivity and business strength.</p>
-           </div>
+      <!-- Our Client -->
+      <section class="bg-themeClr py-32 flex flex-col gap-20 justify-center">
+        <h2 class="text-stone-500 text-3xl md:text-5xl text-center font-bold">Clients we worked with</h2>
+        <div class="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div class="max-w-xl">
+            <h2 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Meet our Clients</h2>
+            <p class="mt-6 text-lg/8 text-gray-600">We’re proud to work with trusted clients across industries. Their success reflects our commitment to quality, innovation, and lasting impact. From startups to leading enterprises, we deliver solutions that make a difference.</p>
           </div>
-          <!-- right -->
-          <div class="flex justify-center items-center">
-            <img class="w-3/4 relative top-52" src="/assets/images/img-2.jpg" alt="">
-          </div>
+          <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            <%- include("./components/clients", {name: "Leslie Alexander", title: "Brand Marketing"}) %>
+            <%- include("./components/clients", {name: "James Anderson", title: "Website Development"}) %>
+            <%- include("./components/clients", {name: "David Thompson", title: "Website Design"}) %>
+            <%- include("./components/clients", {name: "Daniel Foster", title: "Search Enging optimization"}) %>
+            <!-- More people... -->
+          </ul>
         </div>
       </section>
-      <!-- Why Choose Us Page -->
-      <section class="p-20 py-32 bg-themeClr2 flex justify-center">
-        <div class="flex flex-col gap-10 max-w-[1440px] w-full">
-          <h1 class="text-5xl font-open_sana_3 text-mainClr">Why Choose Us?</h1>
-          <p class="text-lg font-open_sana_2 text-mainClr">We are the right term for your business. We have the expertise and knowledge to offer impartial advice and services at an honest price.</p>
-          <p class="text-lg text-mainClr">With us you’ll feel heard. We listen to our client requirements and then select the right solution that fits. We care for your business as our own. We take a sincere interest in it and genuinely want to help your company reach its potential.</p>
-        </div>
-      </section>
-      <!-- Have a Project -->
+    <!-- Have a Project -->
       <section class="p-20 py-32 flex flex-col items-center gap-20">
         <div class="bg-priClr max-w-[1440px] w-full rounded-md flex relative">
           <div class="w-1/3 shrink-0 grid content-between p-10">
@@ -95,18 +79,16 @@
           </div>
         </div>
       </section>
-      <!-- Footer -->
-      <%- include('components/footer') %>
-    </div>
-    
-  </div>
-    
 
- 
+      <!-- Footer -->
+      <%- include("./components/footer")%>
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
   <script>
-  new LocomotiveScroll({
+    new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
       smooth: true,
       multiplier: 1.2,

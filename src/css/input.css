@@ -56,6 +56,18 @@ html, body{
 	background-attachment: fixed;
 	background-size: cover;
 }
+#service_bg_img{
+	background-image: url("/assets/images/service-img.webp");
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: cover;
+}
+#about_bg_img{
+	background-image: url("/assets/images/about-img.jpg");
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: cover;
+}
 
 
 
