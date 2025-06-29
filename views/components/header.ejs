@@ -8,17 +8,75 @@
 <body>
 
 
-	<nav class="fixed bg-[#0000006f] backdrop-blur-xl left-0 top-0 z-50 w-full h-20 flex justify-center items-center p-5">
-		<div class="w-[1280px] max-xl:w-full rounded-full flex justify-between items-center py-4 px-10">
+	<nav class="fixed bg-[#0000009f] backdrop-blur-2xl left-0 top-0 z-50 w-full h-20 flex justify-center items-center p-5">
+		<!-- <div class="w-[1280px] max-xl:w-full rounded-full flex justify-between items-center py-4 px-10">
 			<h1 class="text-3xl font-open_sana_2">Brand Wings</h1>
 			<div id="gsap_nav_links" class="flex justify-center items-center gap-2 h-full">
 				<a href="/" class="linkButton gsap_nav_link">Home</a>
 				<a href="/about" class="linkButton gsap_nav_link">About Us</a>
 				<a href="#" class="linkButton gsap_nav_link">Our Services</a>
-				<a href="#" class="linkButton gsap_nav_link">Contact Us</a>
+				<a href="/contact" class="linkButton gsap_nav_link">Contact Us</a>
 			</div>
 			<div><button class="priBtn">Action Button</button></div>
+		</div> -->
+
+
+		<!-- Navbar Container -->
+	<div class="w-full max-w-[1280px] mx-auto rounded-full flex justify-between items-center py-4 px-6 xl:px-10">
+  <!-- Logo -->
+  <h1 class="text-2xl xl:text-3xl font-open_sana_2">Brand Wings</h1>
+
+  <!-- Desktop Nav Links -->
+  <div id="gsap_nav_links" class="hidden xl:flex justify-center items-center gap-4">
+    <a href="/" class="linkButton gsap_nav_link">Home</a>
+    <a href="/about" class="linkButton gsap_nav_link">About Us</a>
+    <a href="#" class="linkButton gsap_nav_link">Our Services</a>
+    <a href="/contact" class="linkButton gsap_nav_link">Contact Us</a>
+  </div>
+
+  <!-- Action Button (Desktop) -->
+  <div class="hidden xl:block">
+    <button class="priBtn">Action Button</button>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <div class="xl:hidden">
+    <button id="mobileMenuToggle" class="text-3xl focus:outline-none">
+      ☰
+    </button>
 		</div>
+	</div>
+
   </nav>
+
+	<!-- Mobile Dropdown Menu -->
+	<nav id="mobileMenu" class="xl:hidden fixed left-0 top-20 z-50 w-full p-2.5">
+		<div class="bg-[#0000009f] rounded-md backdrop-blur-2xl w-full flex justify-center flex-wrap items-center gap-5 p-5">
+			<div class="flex gap-2 items-center justify-center flex-wrap">
+				<a href="/" class="linkButton gsap_nav_link">Home</a>
+				<a href="/about" class="linkButton gsap_nav_link">About Us</a>
+				<a href="#" class="linkButton gsap_nav_link">Our Services</a>
+				<a href="/contact" class="linkButton gsap_nav_link">Contact Us</a>
+			</div>
+			<button class="priBtn">Action Button</button>
+		</div>
+	</nav>
+
+
+	<!-- JavaScript to Toggle Menu -->
+	<script>
+		const toggle = document.getElementById('mobileMenuToggle');
+		const menu = document.getElementById('mobileMenu');
+
+		document.body.addEventListener("click", () => {
+			menu.classList.add("hidden")
+		})
+
+		menu.addEventListener("click", (e) => e.stopPropagation());
+		toggle.addEventListener('click', (e) => {
+			e.stopPropagation();
+			menu.classList.toggle('hidden');
+		});
+	</script>
 </body>
 </html>

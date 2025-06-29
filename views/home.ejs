@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/output.css" rel="stylesheet">
+  <!-- loco motive -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 </head>
 <body class="theme" id="home_bg_img">
   <div class="blurBg"></div>
 
 
-  <div class="h-screen relative z-10">
-    <!-- Header Section -->
-    <%- include('components/header') %>
+  <!-- Header Section -->
+  <%- include('components/header') %> 
+  <div class="relative z-10" data-scroll-container>
 
     <!-- Content -->
     <div class="relative h-full">
       <!-- Hero Section -->
-      <section class="h-full p-20 py-32 flex justify-center items-center">
+      <section class="h-screen p-20 py-32 flex justify-center items-center">
         <div class="w-[70%] grid gap-10">
           <div> <h1 class="text-6xl font-open_sana_3 capitalize">Digital Agency That, <br>Thrives on Your Success.</h1> </div>
           <div class="flex justify-end"> <p class="w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
@@ -99,11 +101,18 @@
       <%- include('components/footer') %>
     </div>
     
-    
   </div>
     
 
  
 
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+  new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      multiplier: 1.2,
+    });
+  </script>
 </body>
 </html>

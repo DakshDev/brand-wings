@@ -20,6 +20,9 @@ app.get('/about', (req, res) => {
   res.render('about'); // Renders views/about.ejs
 });
 
+app.get('/contact', (req, res) => {
+  res.render('contact'); // Renders views/about.ejs
+});
 
 
 
