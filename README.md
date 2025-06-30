@@ -9,3 +9,15 @@
 
 
 @brand wings
+
+
+
+
+
+
+`https://wa.me/<number>?text=`
+
+
+`For New Line` = %0A
+`For Space` = %20
+`For @` = %40

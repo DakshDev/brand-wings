@@ -16,17 +16,17 @@
   <div class="relative" data-scroll-container>
     <div class="relative h-full">
       <!-- Hero Section -->
-      <section class="h-screen p-20 py-32 flex justify-center items-center">
-        <div class="w-[70%] grid gap-10">
-          <h1 class="text-6xl font-open_sana_3 uppercase text-center">Our Services</h1>
-          <p class="w-9/12 m-auto text-center text-lg">We offer a wide range of services to help you achieve your goals. From web development to digital marketing, we have the expertise to take your business to the next level.</p>
+      <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
+        <div class="max-lg:w-full w-[70%] grid gap-10">
+          <h1 class="text-6xl font-open_sana_3 uppercase md:text-center">Our Services</h1>
+          <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">We offer a wide range of services to help you achieve your goals. From web development to digital marketing, we have the expertise to take your business to the next level.</p>
         </div>
       </section>
       <!-- Our Services -->
-      <section class="bg-themeClr2 p-20 py-32 w-full flex justify-center">
+      <section class="max-lg:px-10 p-20 py-32 bg-themeClr2 flex justify-center">
         <div class="flex flex-col justify-center items-center gap-20 max-w-[1440px] w-full">
-          <h1 class="text-center text-5xl font-open_sana_2 text-mainClr">How can we help you?</h1>
-          <div class="grid grid-cols-3 gap-8">
+          <h1 class="text-5xl font-open_sana_2 text-mainClr">Our Digital Solutions</h1>
+          <div class="max-lg:grid-cols-2 max-sm:grid-cols-1 grid grid-cols-3 gap-5">
             <%- include("./components/serviceBox", {title: "creative design", para: "Our team of professional graphic and web designers will help you with unique and creative logo and website designs that will match your business." }) %>
             <%- include("./components/serviceBox", {title: "Web Development", para: "We help you develop the right website with a good user interface built after a lot of research in the industry to help you make the best out of it." }) %>
             <%- include("./components/serviceBox", {title: "Branding & Marketing", para: "Need help with branding and marketing to reach out to a larger audience? We can help you create a brand presence and marketing efforts." }) %>
@@ -53,10 +53,10 @@
           </ul>
         </div>
       </section>
-    <!-- Have a Project -->
-      <section class="p-20 py-32 flex flex-col items-center gap-20">
-        <div class="bg-priClr max-w-[1440px] w-full rounded-md flex relative">
-          <div class="w-1/3 shrink-0 grid content-between p-10">
+      <!-- Have a Project -->
+      <section class="max-lg:px-10 p-20 py-32 flex flex-col items-center gap-20">
+        <div class="max-lg:flex-col bg-priClr max-w-[1440px] w-full rounded-md overflow-hidden flex relative">
+          <div class="lg:w-1/3 shrink-0 grid content-between p-10 gap-5">
             <div class="flex flex-col gap-10">
               <h1 class="text-4xl font-semibold text-mainClr">Have a Project on mind?</h1>
               <p class="text-lg text-mainClr">We can help you bring your ideas to life. Let’s talk about what we can build and raise together.</p>
@@ -70,16 +70,15 @@
             <img class="w-full" src="/assets/images/img3.jpg" alt="">
           </div>
         </div>
-        <div class="flex gap-20 items-center max-w-[1440px] w-full">
-          <div class="w-1/2">
+        <div class="max-md:flex-col max-md:gap-10 flex gap-20 items-center max-w-[1440px] w-full">
+          <div class="md:w-1/2">
             <h1 class="text-6xl font-bold">Let us together build a flourishing business</h1>
           </div>
-          <div class="w-1/2">
+          <div class="md:w-1/2">
             <p class="text-xl">When connected with us, you aren’t growing your business alone. We have your back and put in our best to contribute to the growth of your entire team and organization. So, if you are looking for the right agency that’ll help you build a good online presence and bring in more conversions and revenue, we are right here!</p>
           </div>
         </div>
       </section>
-
       <!-- Footer -->
       <%- include("./components/footer")%>
     </div>

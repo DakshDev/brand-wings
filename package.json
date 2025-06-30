@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run node\" \"npm run tailwind\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Daksh Kishore",
   "license": "ISC",
   "description": "",
   "dependencies": {
