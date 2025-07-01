@@ -11,9 +11,7 @@
 
 
   <!-- Header Section -->
-  <div id="nav_gsap" class="z-50 relative">
-    <%- include('components/header') %> 
-  </div>
+  <%- include('components/header') %> 
   <div class="relative overflow-x-hidden" data-scroll-container>
     <!-- Content -->
     <div class="relative h-full">
@@ -115,8 +113,6 @@
     });
 
     lenis.on('scroll', (e) => {
-      console.log(e.animate.value);
-      
       if(e.animate.value > 200) our_services_box_gsap();
       if(e.animate.value > 1400) about_us_left_gsap()
       if(e.animate.value > 2100) why_choose_us_section()
@@ -124,11 +120,7 @@
     // ===================================================
 
 
-    // nav header section
     let tl_heroSection = gsap.timeline();
-    tl_heroSection.from(`#nav_gsap`, {
-      y: -200,
-    })
     // hero heading section
     tl_heroSection.from("#hero_sec_head_gsap", {
       opacity: 0,
