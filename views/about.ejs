@@ -16,14 +16,14 @@
     <!-- Hero Section -->
     <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
       <div class="max-lg:w-full w-[70%] grid gap-10">
-        <h1 class="text-6xl font-open_sana_3 uppercase md:text-center">About Our Company</h1>
-        <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">At Brand Wings,  we are passionate about crafting smart digital solutions that help businesses grow and thrive in the modern world. With a team of creative thinkers, tech experts, and problem solvers, we specialize in web development, digital marketing, branding, and innovative technology services.</p>
+        <h1 id="hero_sec_head_gsap" class="text-6xl font-open_sana_3 uppercase md:text-center">About Our Company</h1>
+        <p id="hero_sec_para_gsap" class="max-md:w-full w-9/12 m-auto md:text-center text-lg">At Brand Wings,  we are passionate about crafting smart digital solutions that help businesses grow and thrive in the modern world. With a team of creative thinkers, tech experts, and problem solvers, we specialize in web development, digital marketing, branding, and innovative technology services.</p>
       </div>
     </section>
     <!-- Our Story -->
     <section class="max-lg:px-10 p-20 py-32 bg-themeClr">
       <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div id="our_story_gsap" class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-4xl font-open_sana_2 text-mainClr font-bold mb-6">Our Story</h2>
             <p class="text-lg text-gray-700 mb-6">
@@ -200,9 +200,40 @@
     });
 
     lenis.on('scroll', (e) => {
-      // console.log(e.animate.value);
+      console.log(e.animate.value);
+      if(e.animate.value > 50) our_story_gsap();
     });
     // ===================================================
+
+
+
+
+
+
+
+
+    // hero heading section
+    gsap.from("#hero_sec_head_gsap, #hero_sec_para_gsap", {
+      delay: 1,
+      opacity: 0,
+      y: 50,
+      stagger: 0.5,
+      duration: 1,
+    });
+    // our_story_gsap
+    gsap.to("#our_story_gsap > div", {
+      opacity: 0,
+      x: 250,
+    });
+    function our_story_gsap(){
+      gsap.to("#our_story_gsap > div", {
+        opacity: 1,
+        x: 0,
+        stagger: 0.5,
+        duration: 1,
+      });
+    }
+    
     </script>
 </body>
 </html>

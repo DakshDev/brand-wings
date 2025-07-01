@@ -18,8 +18,8 @@
       <!-- Hero Section -->
       <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
         <div class="max-lg:w-full w-[70%] grid gap-10">
-          <h1 class="text-6xl font-open_sana_3 uppercase md:text-center">Contact Us</h1>
-          <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">We’d love to hear from you! Whether you’re looking to start a new digital project, need help optimizing your online presence, or simply have a question about our services — our team is here to help. Fill out the form below or reach out through the contact details provided, and we’ll get back to you as soon as possible. Let’s work together to bring your digital ideas to life.</p>
+          <h1 id="hero_sec_head_gsap" class="text-6xl font-open_sana_3 uppercase md:text-center">Contact Us</h1>
+          <p id="hero_sec_para_gsap" class="max-md:w-full w-9/12 m-auto md:text-center text-lg">We’d love to hear from you! Whether you’re looking to start a new digital project, need help optimizing your online presence, or simply have a question about our services — our team is here to help. Fill out the form below or reach out through the contact details provided, and we’ll get back to you as soon as possible. Let’s work together to bring your digital ideas to life.</p>
         </div>
       </section>
       <!-- Contact Page -->
@@ -63,6 +63,20 @@
       // console.log(e.animate.value);
     });
     // ===================================================
+
+
+
+
+
+
+    // hero heading section
+    gsap.from("#hero_sec_head_gsap, #hero_sec_para_gsap", {
+      delay: 1,
+      opacity: 0,
+      y: 50,
+      stagger: 0.5,
+      duration: 1,
+    });
     </script>
 
 </body>

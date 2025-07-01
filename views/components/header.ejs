@@ -11,28 +11,28 @@
 	<nav class="fixed bg-[#0000009f] backdrop-blur-2xl left-0 top-0 z-50 w-full h-20 flex justify-center items-center p-5">
 
 		<!-- Navbar Container -->
-	<div class="w-full max-w-[1280px] mx-auto rounded-full flex justify-between items-center py-4 px-6 xl:px-10">
-  <!-- Logo -->
-  <a href="/" class="text-2xl xl:text-3xl font-open_sana_2 flex gap-2 items-center"><img src="/assets/images/logo-2.jpg" alt="logo" class="h-10 rounded-md">Brand Wings</a>
+	<div id="header" class="w-full max-w-[1280px] mx-auto rounded-full flex justify-between items-center py-4 px-6 xl:px-10">
+		<!-- Logo -->
+		<a href="/" id="logo" class="text-2xl xl:text-3xl font-open_sana_2 flex gap-2 items-center"><img src="/assets/images/logo-2.jpg" alt="logo" class="h-10 rounded-md">Brand Wings</a>
 
-  <!-- Desktop Nav Links -->
-  <div class="hidden xl:flex justify-center items-center gap-4">
-    <a href="/" class="linkButton gsap_nav_link">Home</a>
-    <a href="/about" class="linkButton gsap_nav_link">About Us</a>
-    <a href="/services" class="linkButton gsap_nav_link">Our Services</a>
-    <a href="/contact" class="linkButton gsap_nav_link">Contact Us</a>
-  </div>
+		<!-- Desktop Nav Links -->
+		<div id="nav" class="hidden xl:flex justify-center items-center gap-4">
+			<span><a href="/" class="linkButton gsap_nav_link">Home</a></span>
+			<span><a href="/about" class="linkButton gsap_nav_link">About Us</a></span>
+			<span><a href="/services" class="linkButton gsap_nav_link">Our Services</a></span>
+			<span><a href="/contact" class="linkButton gsap_nav_link">Contact Us</a></span>
+		</div>
 
-  <!-- Action Button (Desktop) -->
-  <!-- <div class="hidden xl:block">
-    <a href="/contact" class="priBtn">Contact Us</a>
-  </div> -->
+		<!-- Action Button (Desktop) -->
+		<!-- <div class="hidden xl:block">
+			<a href="/contact" class="priBtn">Contact Us</a>
+		</div> -->
 
-  <!-- Mobile Menu Toggle -->
-  <div class="xl:hidden">
-    <button id="mobileMenuToggle" class="text-3xl focus:outline-none">
-      ☰
-    </button>
+  	<!-- Mobile Menu Toggle -->
+		<div class="xl:hidden">
+			<button id="mobileMenuToggle" class="text-3xl focus:outline-none">
+				☰
+			</button>
 		</div>
 	</div>
 
@@ -66,6 +66,19 @@
 			e.stopPropagation();
 			menu.classList.toggle('hidden');
 		});
+	</script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		gsap.from("#header > a, #header > div > span", {
+      opacity: 0,
+			y: -50,
+			stagger: 0.1,
+      duration: 1,
+    })
 	</script>
 </body>
 </html>

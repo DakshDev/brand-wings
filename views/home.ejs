@@ -70,7 +70,7 @@
         </div>
       </section>
       <!-- Have a Project -->
-      <section class="max-lg:px-10 p-20 py-32 flex flex-col items-center gap-20">
+      <section id="have_project_idea_gsap" class="max-lg:px-10 p-20 py-32 flex flex-col items-center gap-20">
         <div class="max-lg:flex-col bg-priClr max-w-[1440px] w-full rounded-md overflow-hidden flex relative">
           <div class="lg:w-1/3 shrink-0 grid content-between p-10 gap-5">
             <div class="flex flex-col gap-10">
@@ -104,7 +104,6 @@
 
   <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
 
     // Lenis
@@ -117,21 +116,17 @@
       if(e.animate.value > 200) our_services_box_gsap();
       if(e.animate.value > 1400) about_us_left_gsap()
       if(e.animate.value > 2100) why_choose_us_section()
+      if(e.animate.value > 2600) have_project_idea_gsap()
     });
     // ===================================================
 
 
-    let tl_heroSection = gsap.timeline();
     // hero heading section
-    tl_heroSection.from("#hero_sec_head_gsap", {
+    gsap.from("#hero_sec_head_gsap, #hero_sec_para_gsap", {
+      delay: 1,
       opacity: 0,
-      x: -200,
-      duration: 1,
-    });
-    // hero para section 
-    tl_heroSection.from("#hero_sec_para_gsap", {
-      opacity: 0,
-      x: -200,
+      y: 50,
+      stagger: 0.5,
       duration: 1,
     });
     // our services section
@@ -151,7 +146,7 @@
       })     
       gsap.to(document.querySelectorAll("#services_gsap > div > div"),{
         y: 0,
-        stagger: 0.1,
+        stagger: 0.2,
         opacity: 1,
         duration: 1,
       })
@@ -190,8 +185,18 @@
         opacity: 1,
       })
     }
-
-
+    // Have Project Idea
+    gsap.to(document.querySelectorAll("#have_project_idea_gsap"),{
+      opacity: 0,
+      y: 250,
+    })
+    function have_project_idea_gsap(){
+      gsap.to(document.querySelectorAll("#have_project_idea_gsap"),{
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      })
+    }
   </script>
 </body>
 </html>
