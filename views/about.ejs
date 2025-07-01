@@ -5,20 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="/css/output.css" rel="stylesheet" />
   <title>About Us - Your Company</title>
-   <!-- locomotive -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 </head>
 <body class="theme" id="about_bg_img">
   <div class="blurBg"></div>
 
   <%- include('components/header') %>
 
-  <div class="relative" data-scroll-container>
+  <div class="relative h-full" data-scroll-container>
     <!-- Hero Section -->
-    <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
+    <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
       <div class="max-lg:w-full w-[70%] grid gap-10">
         <h1 class="text-6xl font-open_sana_3 uppercase md:text-center">About Our Company</h1>
-        <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">Leading the industry with innovation, excellence, and commitment to our clients' success for over two decades.</p>
+        <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">At Brand Wings,  we are passionate about crafting smart digital solutions that help businesses grow and thrive in the modern world. With a team of creative thinkers, tech experts, and problem solvers, we specialize in web development, digital marketing, branding, and innovative technology services.</p>
       </div>
     </section>
     <!-- Our Story -->
@@ -168,18 +166,11 @@
       </div>
     </section>
     <!-- Footer -->
-    <%- include('components/footer') %>
+    <div class="relative">
+      <%- include('components/footer') %>
+    </div>
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-  <script>
-  new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      multiplier: 1.2,
-    });
-  </script>
 </body>
 </html>
 

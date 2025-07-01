@@ -6,10 +6,12 @@
   <title>Link Button</title>
 </head>
 <body>
-  <div class="bg-themeClr p-6 rounded-lg shadow-lg">
-    <h3 class="text-mainClr text-xl font-bold mb-4 capitalize"><%= title %></h3>
-    <p class="text-base text-mainClr mb-4"> <%= para %> </p>
-    <Button class="secBtn">Get In Touch</Button>
+  <div class="bg-themeClr px-10 py-8 rounded-lg border hover:border-gray-300 flex flex-col min-h-72 justify-between">
+    <div>
+      <h3 class="text-mainClr text-2xl font-serif mb-4 capitalize"><%= title %></h3>
+      <p class="text-base text-gray-800 text-md mb-4"> <%= para %> </p>
+    </div>
+    <div><Button class="secBtn">I want This Service</Button></div>
   </div>
 </body>
 </html>

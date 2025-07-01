@@ -52,7 +52,7 @@ html, body{
 }
 #contact_bg_img{
 	background-image: url("/assets/images/contact-img.jpg");
-	background-position: center top;
+	background-position: center bottom;
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -63,7 +63,7 @@ html, body{
 	background-size: cover;
 }
 #about_bg_img{
-	background-image: url("/assets/images/about-img.jpg");
+	background-image: url("/assets/images/service-img.webp");
 	background-position: center top;
 	background-attachment: fixed;
 	background-size: cover;

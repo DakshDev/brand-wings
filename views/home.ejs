@@ -4,66 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/output.css" rel="stylesheet">
-  <!-- loco motive -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 </head>
 <body class="theme" id="home_bg_img">
   <div class="blurBg"></div>
 
 
   <!-- Header Section -->
-  <%- include('components/header') %> 
+  <div id="nav_gsap" class="z-50 relative">
+    <%- include('components/header') %> 
+  </div>
   <div class="relative" data-scroll-container>
     <!-- Content -->
     <div class="relative h-full">
       <!-- Hero Section -->
-      <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
+      <section id="heros_section_gsap" class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
         <div class="max-lg:w-full w-[70%] grid gap-10">
-          <div> <h1 class="text-6xl font-open_sana_3 capitalize">Digital Agency That, <br>Thrives on Your Success.</h1> </div>
-          <div class="flex md:justify-end"> <p class="md:w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
+          <div id="hero_sec_head_gsap"> <h1 class="text-6xl font-open_sana_3 capitalize">Digital Agency That, <br>Thrives on Your Success.</h1> </div>
+          <div id="hero_sec_para_gsap" class="flex md:justify-end"> <p class="md:w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
         </div>
       </section>
       <!-- Digital Services -->
-      <section class="max-lg:px-10 p-20 py-32 bg-themeClr2 flex justify-center">
-        <div class="flex flex-col justify-center items-center gap-20 max-w-[1440px] w-full">
-          <h1 class="text-5xl font-open_sana_2 text-mainClr">Our Digital Solutions</h1>
+      <section id="our_services_gsap" class="max-lg:px-10 p-20 py-32 bg-themeClr2 flex justify-center">
+        <div id="services_gsap" class="flex flex-col justify-center items-center gap-20 max-w-[1440px] w-full">
+          <h1 class="text-5xl font-open_sana_3 text-gray-800">Digital Services</h1>
           <div class="max-lg:grid-cols-2 max-sm:grid-cols-1 grid grid-cols-3 gap-5">
             <%- include("./components/serviceBox", {title: "creative design", para: "Our team of professional graphic and web designers will help you with unique and creative logo and website designs that will match your business." }) %>
             <%- include("./components/serviceBox", {title: "Web Development", para: "We help you develop the right website with a good user interface built after a lot of research in the industry to help you make the best out of it." }) %>
             <%- include("./components/serviceBox", {title: "Branding & Marketing", para: "Need help with branding and marketing to reach out to a larger audience? We can help you create a brand presence and marketing efforts." }) %>
-            <%- include("./components/serviceBox", {title: "search engine optimization", para: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, adipisci possimus. Dolor porro rem."}) %>
-            <%- include("./components/serviceBox", {title: "app development", para: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, adipisci possimus. Dolor porro rem."}) %>
-            <%- include("./components/serviceBox", {title: "ai chat bot", para: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, adipisci possimus. Dolor porro rem."}) %>
+            <%- include("./components/serviceBox", {title: "search engine optimization", para: "We offer professional SEO services that help businesses increase their visibility, drive organic traffic, Whether you're a small business, startup, or e-commerce brand."}) %>
+            <%- include("./components/serviceBox", {title: "app development", para: "Are you looking to build a fast, secure, and modern web application for your business or startup? we offer professional web app development services tailored to your specific needs."}) %>
+            <%- include("./components/serviceBox", {title: "ai chat bot", para: "We build custom AI-powered chatbots that help businesses save time, improve customer experience, and work 24/7 — even when your team is offline."}) %>
           </div>
         </div>
       </section>
       <!-- About Us -->
-      <section class="max-lg:px-10 p-20 py-32 bg-priClr flex justify-center">
-        <div class="flex justify-between max-w-[1440px]">
+      <section class="max-lg:px-10 p-20 bg-priClr flex justify-center">
+        <div class="flex justify-between items-center max-w-[1440px]">
           <!-- left -->
-          <div class="w-full grid content-start items-start gap-14 pr-20">
+          <div id="about_us_left_gsap" class="w-full grid content-start items-start gap-10 md:pr-40 pr-20">
            <div class="grid gap-5">
-             <h1 class="text-5xl font-open_sana_3 text-mainClr">About Us</h1>
-              <p class="text-mainClr text-2xl">We are a team of 40 web experts with over 12 years of experience in website building and marketing to help businesses grow online.</p>
+             <h1 class="text-3xl font-open_sana_2 text-mainClr">About us</h1>
+              <p class="text-mainClr text-lg">We are a team of 40 web experts with over 12 years of experience in website building and marketing to help businesses grow online.</p>
            </div>
            <div class="grid gap-2.5">
-             <h3 class="text-2xl font-open_sana_2 text-mainClr">Our mission</h3>
+             <h3 class="text-3xl font-open_sana_2 text-mainClr">Our mission</h3>
               <p class="text-mainClr text-lg">Our mission is to empower our clients to use the internet to its full potential by providing affordable, effective, custom design and marketing solutions..</p>
            </div>
            <div class="grid gap-2.5">
-              <h3 class="text-2xl font-open_sana_2 text-mainClr">Our vision</h3>
+              <h3 class="text-3xl font-open_sana_2 text-mainClr">Our vision</h3>
               <p class="text-mainClr text-lg">Our vision is to become a global leader in providing the best and unique web design and marketing services to improve our client’s productivity and business strength.</p>
            </div>
           </div>
           <!-- right -->
-          <div class="max-lg:w-2/3 max-md:hidden w-1/2 flex justify-center items-center">
-            <img class="w-full" src="/assets/images/img-2.jpg" alt="">
+          <div id="about_us_right_gsap" class="max-lg:w-2/3 h-[450px] max-md:hidden w-1/2 flex justify-center items-center">
+            <img class="h-full" src="/assets/images/img-2.jpg" alt="">
           </div>
         </div>
       </section>
       <!-- Why Choose Us Page -->
       <section class="max-lg:px-10 p-20 py-32 bg-themeClr2 flex md:justify-center">
-        <div class="flex flex-col gap-10 max-w-[1440px] w-full">
+        <div id="why_choose_us_section" class="flex flex-col gap-10 max-w-[1440px] w-full">
           <h1 class="text-5xl font-open_sana_3 text-mainClr">Why Choose Us?</h1>
           <p class="text-lg font-open_sana_2 text-mainClr">We are the right term for your business. We have the expertise and knowledge to offer impartial advice and services at an honest price.</p>
           <p class="text-lg text-mainClr">With us you’ll feel heard. We listen to our client requirements and then select the right solution that fits. We care for your business as our own. We take a sincere interest in it and genuinely want to help your company reach its potential.</p>
@@ -98,19 +98,114 @@
       <!-- Footer -->
       <%- include('components/footer') %>
     </div>
-    
   </div>
+
     
 
  
 
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-  <script>
-  new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      multiplier: 1.2,
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!-- <script>
+
+    // Locomotive
+    // ===================================================
+    let scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        multiplier: 1.2,
     });
-  </script>
+    // ===================================================
+
+
+    // nav header section
+    let tl_heroSection = gsap.timeline();
+    tl_heroSection.from(`#nav_gsap`, {
+      y: -500,
+      duration: 1,
+    })
+    // hero heading section
+    tl_heroSection.from("#hero_sec_head_gsap", {
+      opacity: 0,
+      x: -200,
+      duration: 1,
+    });
+    // hero para section 
+    tl_heroSection.from("#hero_sec_para_gsap", {
+      opacity: 0,
+      x: -200,
+      duration: 1,
+    });
+    // our services section
+    gsap.to(document.querySelectorAll("#services_gsap > h1"),{
+      y: 250,
+      opacity: 0,
+    })
+    gsap.to(document.querySelectorAll("#services_gsap > div > div"),{
+      y: 250,
+      opacity: 0,
+    })
+    function our_services_box_gsap() {     
+      gsap.to(document.querySelectorAll("#services_gsap > h1"),{
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      })     
+      gsap.to(document.querySelectorAll("#services_gsap > div > div"),{
+        y: 0,
+        stagger: 0.1,
+        opacity: 1,
+        duration: 1,
+      })
+    }
+    // About Us
+    gsap.to(document.querySelectorAll("#about_us_left_gsap > div"),{
+      x: -250,
+      opacity: 0,
+    })
+    gsap.to(document.querySelectorAll("#about_us_right_gsap"),{
+      x: 250,
+      opacity: 0,
+    })
+    function about_us_left_gsap(){
+      gsap.to(document.querySelectorAll("#about_us_left_gsap > div"),{
+        x: 0,
+        stagger: 0.2,
+        opacity: 1,
+        duration: 1,
+      })
+      gsap.to(document.querySelectorAll("#about_us_right_gsap"),{
+        x: 0,
+        opacity: 1,
+        duration: 1,
+      })
+    };
+    // Why Choose Us
+    gsap.to(document.querySelectorAll("#why_choose_us_section > h1, #why_choose_us_section > p"),{
+      y: 250,
+      opacity: 0,
+    })
+    function why_choose_us_section(){
+      gsap.to(document.querySelectorAll("#why_choose_us_section > h1, #why_choose_us_section > p"),{
+        y: 0,
+        stagger: 0.2,
+        opacity: 1,
+      })
+    }
+
+
+
+
+    // Scroll animation
+    // ==================================================
+     scroll.on("scroll", (obj) => {        
+      if(obj.scroll.y > 300) our_services_box_gsap();
+      if(obj.scroll.y > 1250) about_us_left_gsap();
+      if(obj.scroll.y > 1250) about_us_left_gsap();
+      if(obj.scroll.y > 1800) why_choose_us_section();
+    })
+    // ==================================================
+
+  </script> -->
 </body>
 </html>

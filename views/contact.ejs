@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/css/output.css">
-  <!-- locomotive -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 </head>
 <body id="contact_bg_img" class="theme">
   <div class="blurBg"></div>
@@ -14,13 +12,13 @@
 
   <!-- Header Section -->
   <%- include('components/header') %>
-   <div class="relative" data-scroll-container>
+   <div class="relative h-full" data-scroll-container>
     <div class="relative h-full">
       <!-- Hero Section -->
-      <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
+      <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
         <div class="max-lg:w-full w-[70%] grid gap-10">
           <h1 class="text-6xl font-open_sana_3 uppercase md:text-center">Contact Us</h1>
-          <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+          <p class="max-md:w-full w-9/12 m-auto md:text-center text-lg">We’d love to hear from you! Whether you’re looking to start a new digital project, need help optimizing your online presence, or simply have a question about our services — our team is here to help. Fill out the form below or reach out through the contact details provided, and we’ll get back to you as soon as possible. Let’s work together to bring your digital ideas to life.</p>
         </div>
       </section>
       <!-- Contact Page -->
@@ -47,18 +45,9 @@
       <%- include('components/footer') %>
     </div>
   </div>
-  
+        
 
 
 
-
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-  <script>
-    new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      multiplier: 1.2,
-    });
-  </script>
 </body>
 </html>
