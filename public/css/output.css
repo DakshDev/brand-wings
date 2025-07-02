@@ -792,16 +792,12 @@ video {
   max-width: 1440px;
 }
 
-.max-w-\[500px\] {
-  max-width: 500px;
+.max-w-\[600px\] {
+  max-width: 600px;
 }
 
 .max-w-screen-xl {
   max-width: 1280px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .shrink-0 {

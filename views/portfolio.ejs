@@ -36,13 +36,23 @@
   </style>
 </head>
 
-<body class="theme">
+<body class="theme overflow-x-hidden" id="home_bg_img">
+  <div class="blurBg"></div>
 
   <%- include("./components/header") %>
 
+  <div class="main-container">
   <!-- Swiper -->
-  <div class="swiper mySwiper">
+  <section class="swiper mySwiper h-screen">
     <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <section id="heros_section_gsap" class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center z-10 relative">
+        <div class="max-lg:w-full w-[70%] grid gap-10">
+          <div id="hero_sec_head_gsap"> <h1 class="text-6xl font-open_sana_3 capitalize">Our Recent Projects.</h1> </div>
+          <div id="hero_sec_para_gsap" class="flex md:justify-end"> <p class="md:w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
+        </div>
+      </section>
+      </div>
       <div class="swiper-slide">
         <div class="one bg-black w-full h-full relative">
           <%- include("./components/projects", {imageUrl: "/assets/images/project1.png", title: "Job Portal", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://qabil.jobs/"}) %>
@@ -61,6 +71,7 @@
     </div>
     <div style="display: none;" class="swiper-button-next"></div>
     <div style="display: none;" class="swiper-button-prev"></div>
+  </section>
   </div>
 
   <!-- Swiper JS -->
@@ -87,7 +98,7 @@
     
     // on wheel click
     let loaded = true;
-     document.addEventListener('wheel', function(event) {
+     document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
       
 
       if(!loaded) {
