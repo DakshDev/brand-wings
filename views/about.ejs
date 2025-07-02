@@ -14,7 +14,7 @@
 
   <div class="relative h-full" data-scroll-container>
     <!-- Hero Section -->
-    <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
+    <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
       <div class="max-lg:w-full w-[70%] grid gap-10">
         <h1 id="hero_sec_head_gsap" class="text-6xl font-open_sana_3 uppercase md:text-center">About Our Company</h1>
         <p id="hero_sec_para_gsap" class="max-md:w-full w-9/12 m-auto md:text-center text-lg">At Brand Wings,  we are passionate about crafting smart digital solutions that help businesses grow and thrive in the modern world. With a team of creative thinkers, tech experts, and problem solvers, we specialize in web development, digital marketing, branding, and innovative technology services.</p>
@@ -46,7 +46,7 @@
     </section>
     <!-- Our Foundation -->
     <section class="max-lg:px-10 p-20 py-32 bg-priClr">
-      <div class="container mx-auto flex flex-col gap-20">
+      <div id="foundation_gsap" class="container mx-auto flex flex-col gap-20">
         <h2 class="text-5xl font-open_sana_2 text-mainClr font-bold text-center">Our Foundation</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
@@ -80,7 +80,7 @@
     </section>
     <!-- Our Impact -->
     <section class="max-lg:px-10 p-20 py-32 bg-themeClr text-black">
-      <div class="container mx-auto">
+      <div id="impact_gsap" class="container mx-auto">
         <h2 class="text-5xl font-bold text-center font-open_sana_2 mb-12 text-mainClr">Our Impact</h2>
         <div class="grid md:grid-cols-4 gap-8">
           <div class="text-center">
@@ -104,7 +104,7 @@
     </section>
     <!-- Our Vision -->
    <section class="max-lg:px-10 p-20 py-32 bg-themeClr">
-  <div class="container mx-auto flex flex-col gap-20">
+  <div id="vision_gsap" class="container mx-auto flex flex-col gap-20">
     <h2 class="text-5xl font-open_sana_2 text-mainClr font-bold text-center">Our Vision</h2>
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Text Content -->
@@ -200,14 +200,12 @@
     });
 
     lenis.on('scroll', (e) => {
-      console.log(e.animate.value);
-      if(e.animate.value > 50) our_story_gsap();
+      if(e.animate.value > 400) our_story_gsap();
+      if(e.animate.value > 1350) foundation_gsap();
+      if(e.animate.value > 1900) impact_gsap();
+      if(e.animate.value > 2600) vision_gsap();
     });
     // ===================================================
-
-
-
-
 
 
 
@@ -233,7 +231,42 @@
         duration: 1,
       });
     }
-    
+    // foundation_gsap
+    gsap.to("#foundation_gsap > h2, #foundation_gsap > div > div", {
+      opacity: 0,
+      y: 150,
+    });
+    function foundation_gsap(){
+      gsap.to("#foundation_gsap > h2, #foundation_gsap > div > div", {
+        opacity: 1,
+        stagger: 0.2,
+        y: 0,
+      });
+    }
+    // impact_gsap
+    gsap.to("#impact_gsap > h2, #impact_gsap > div > div", {
+      opacity: 0,
+      y: 150,
+    });
+    function impact_gsap(){
+      gsap.to("#impact_gsap > h2, #impact_gsap > div > div", {
+        opacity: 1,
+        stagger: 0.2,
+        y: 0,
+      });
+    }
+    // vision_gsap
+    gsap.to("#vision_gsap > h2, #vision_gsap > div > div", {
+      opacity: 0,
+      y: 150,
+    });
+    function vision_gsap(){
+      gsap.to("#vision_gsap > h2, #vision_gsap > div > div", {
+        opacity: 1,
+        stagger: 0.2,
+        y: 0,
+      });
+    }
     </script>
 </body>
 </html>

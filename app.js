@@ -24,6 +24,9 @@ app.get('/contact', (req, res) => {
   res.render('contact'); // Renders views/about.ejs
 });
 
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio'); // Renders views/services.ejs
+});
 
 app.get('/services', (req, res) => {
   res.render('services'); // Renders views/services.ejs

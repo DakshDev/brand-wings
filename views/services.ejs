@@ -44,7 +44,7 @@
   <div class="relative h-full" data-scroll-container>
     <div class="relative h-full">
       <!-- Hero Section -->
-      <section class="max-lg:px-10 h-4/5 p-20 py-32 flex justify-center items-center">
+      <section class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center">
         <div class="max-lg:w-full w-[70%] grid gap-10">
           <h1 id="hero_sec_head_gsap" class="text-6xl font-open_sana_3 uppercase md:text-center">Our Services</h1>
           <p id="hero_sec_para_gsap" class="max-md:w-full w-9/12 m-auto md:text-center text-lg">We offer tailored digital solutions designed to help your business grow, connect, and perform better online. From building powerful platforms to enhancing online visibility and automating your processes, our goal is to simplify technology for you while delivering real, measurable results.</p>
@@ -142,7 +142,7 @@
 
     lenis.on('scroll', (e) => {
       console.log(e.animate.value);
-      if(e.animate.value > 75 ) our_services_box_gsap();
+      if(e.animate.value > 150 ) our_services_box_gsap();
       if(e.animate.value > 1750 ) have_project_idea_gsap();
     });
     // ===================================================

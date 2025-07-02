@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/css/output.css">
+  <link rel="icon" href="/assets/images/fav-icon.png" type="image/png">
+  <!-- Demo styles -->
+  <style>
+    .swiper, .swiper-wrapper {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .one, .two, .three{
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+        background-image: url("/assets/images/darkbg.png");
+        padding: 0px 40px;
+    }
+
+  </style>
+</head>
+
+<body class="theme">
+
+  <%- include("./components/header") %>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="one bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project1.png", title: "Job Portal", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://qabil.jobs/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="two bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project2.webp", title: "Restaurant Management System", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://qabil.jobs/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="three bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project3.png", title: "Employee Management System", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://ems-cloudbased.vercel.app/"}) %>
+        </div>
+      </div>
+    </div>
+    <div style="display: none;" class="swiper-button-next"></div>
+    <div style="display: none;" class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      effect: "fade",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    
+    
+    
+    
+    
+    // on wheel click
+    let loaded = true;
+     document.addEventListener('wheel', function(event) {
+      
+
+      if(!loaded) {
+        setTimeout(() => {
+          loaded = true;
+        }, 50)
+        return;
+      };
+
+      if (event.deltaY < 0) {
+        // deltaY > 0 means scrolling down
+        const nextButton = document.querySelector('.swiper-button-prev');
+        if (nextButton) {
+          nextButton.click(); // Simulate click
+          loaded = false;
+        }
+      }
+       
+      if (event.deltaY > 0) {
+        // deltaY > 0 means scrolling down
+        const nextButton = document.querySelector('.swiper-button-next');
+        if (nextButton) {
+          nextButton.click(); // Simulate click
+          loaded = false;
+        }
+      }
+    
+  }, { passive: true });
+    
+  </script>
+</body>
+
+</html>

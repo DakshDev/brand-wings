@@ -68,7 +68,12 @@ html, body{
 	background-attachment: fixed;
 	background-size: cover;
 }
-
+#portfolio_bg_img{
+	background-image: url("/assets/images/portfolio-img.jpg");
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
 
 
 
