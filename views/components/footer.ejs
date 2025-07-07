@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Footer</title>
 </head>
 <body>
@@ -12,7 +13,12 @@
 		<section class="p-20 px-10 bg-themeClr2 flex justify-center">
 			<div class="max-w-[1440px] w-full flex flex-wrap gap-10 items-center justify-center">
 				<h1 class="text-5xl text-mainClr font-semibold">Subscribe For Updates</h1>
-				<div> <input type="text" name="subscribe field" class="border border-mainClr px-4 py-2 rounded-md text-xl w-80 text-mainClr" placeholder="Enter Your Email"> <button class="secBtn text-xl capitalize">i'm interested</button> </div>
+		<div>
+    <form id="subscribeForm" >
+        <input type="email" name="email" class="border border-mainClr px-4 py-2 rounded-md text-xl w-80 text-mainClr" placeholder="Enter Your Email" required>
+        <button type="submit" class="secBtn text-xl capitalize">I'm Interested</button>
+    </form>
+</div>
 			</div>
 		</section>
 		<section class="px-10 divide-y bg-themeClr2">
@@ -72,6 +78,25 @@
 			<div class="py-6 text-sm text-center text-mainClr">© 2025 Company Co. All rights reserved.</div>
 		</section>
 	</footer>
-  
+  <script>
+  document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch('/subscribe', {
+      method: 'POST',
+      body: new URLSearchParams(formData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire('Subscribed!', 'Thank you for subscribing.', 'success');
+      form.reset();
+    })
+    .catch(err => {
+      Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
+    });
+  });
+</script>
 </body>
 </html>
