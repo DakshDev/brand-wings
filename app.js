@@ -79,5 +79,34 @@ app.post("/subscribe",async(req,res)=>{
 
 
 
+app.post("/contactus", async (req, res) => {
+  const { email, subject, message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ameenhamza222@gmail.com',
+      pass: 'wjsjegnltbyyuknv',
+    },
+  });
+
+  const mailOptions = {
+    from: email,
+    to: 'ameenhamza222@gmail.com',
+    subject: `Contact Form: ${subject}`,
+    text: `You have a new message from ${email}:\n\n${message}`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Message sent successfully' });
+  } catch (error) {
+    console.error('Error sending contact form email:', error);
+    res.status(500).json({ error: 'Failed to send message' });
+  }
+});
+
+
+
 // Start server
 app.listen(3000, () => console.log('Live...'));

@@ -6,6 +6,7 @@
   <title>Brand Wings | Contact</title>
   <link rel="stylesheet" href="/css/output.css">
   <link rel="icon" href="/assets/images/fav-icon.png" type="image/png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body id="contact_bg_img" class="theme">
   <div class="blurBg"></div>
@@ -25,20 +26,30 @@
       <!-- Contact Page -->
       <section class="bg-white flex justify-center">
         <div class="p-20 py-32 max-w-[1280px] w-full">
-            <form action="#" class="space-y-5">
+            <form  id="contactForm" action="/contactus" method="POST" class="space-y-5">
                 <div>
                     <label for="email" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Your email</label>
-                    <input type="email" id="email" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="example@gmail.com" required>
+                    <input type="email" name="email" id="email" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="example@gmail.com" required>
                 </div>
                 <div>
                     <label for="subject" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Subject</label>
-                    <input type="text" id="subject" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Let us know how we can help you" required>
+                    <input type="text" name="subject" id="subject" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Let us know how we can help you" required>
                 </div>
                 <div class="sm:col-span-2">
-                    <label for="message" class="block text-xl mb-2 font-open_sana_2 text-mainClr">Your message</label>
-                    <textarea id="message" rows="6" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr resize-none w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Leave a comment..."></textarea>
+                    <label for="message"  class="block text-xl mb-2 font-open_sana_2 text-mainClr">Your message</label>
+                    <textarea id="message" name="message" rows="6" class="rounded-md border border-mainClr font-open_sana_2 text-mainClr resize-none w-full bg-[#f7f7f7] p-4 py-2.5" placeholder="Leave a comment..."></textarea>
                 </div>
-                <button type="submit" class="secBtn p-4 capitalize">Send message</button>
+       <button 
+  type="submit" 
+  id="sendBtn" 
+  class="bg-mainClr text-white hover:bg-black transition-colors px-5 py-3 rounded-md flex items-center justify-center gap-2"
+>
+  <span id="btnText">Send message</span>
+  <svg id="btnSpinner" class="hidden w-5 h-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
+  </svg>
+</button>
             </form>
         </div>
       </section>
@@ -78,6 +89,52 @@
       duration: 1,
     });
     </script>
+
+  <script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+   
+    const sendBtn = document.getElementById('sendBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+
+    
+    sendBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    fetch('/contactus', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(formData),
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.message) {
+        Swal.fire('Message Sent!', 'We’ll get back to you soon.', 'success');
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    })
+    .catch(err => {
+      Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
+    })
+    .finally(() => {
+      
+      sendBtn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
