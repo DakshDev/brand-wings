@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Swiper demo</title>
+  <title>Brand Wings | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -46,26 +46,23 @@
   <section class="swiper mySwiper h-screen">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <section id="heros_section_gsap" class="max-lg:px-10 h-screen p-20 py-32 flex justify-center items-center z-10 relative">
-        <div class="max-lg:w-full w-[70%] grid gap-10">
-          <div id="hero_sec_head_gsap"> <h1 class="text-6xl font-open_sana_3 capitalize">Our Recent Projects.</h1> </div>
-          <div id="hero_sec_para_gsap" class="flex md:justify-end"> <p class="md:w-1/2 text-lg">If you are looking for an agency to help you create a remarkable presence online, you’ve come to the right place. We can help you take your business to the next level.</p> </div>
-        </div>
-      </section>
-      </div>
-      <div class="swiper-slide">
         <div class="one bg-black w-full h-full relative">
-          <%- include("./components/projects", {imageUrl: "/assets/images/project1.png", title: "Job Portal", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://qabil.jobs/"}) %>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="two bg-black w-full h-full relative">
-          <%- include("./components/projects", {imageUrl: "/assets/images/project2.webp", title: "Restaurant Management System", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://qabil.jobs/"}) %>
+          <%- include("./components/projects", {imageUrl: "/assets/images/project1.PNG", title: "Job Portal", para: "The Jobs Portal is a user-friendly platform specifically designed to help students connect with a wide range of employers. It offers access to valuable opportunities including internships, part-time jobs, and full-time positions and secure relevant job opportunities that align with their skills and career goals.", path: "https://qabil.jobs/"}) %>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="three bg-black w-full h-full relative">
-          <%- include("./components/projects", {imageUrl: "/assets/images/project3.png", title: "Employee Management System", para: "The Bano Qabil Jobs Portal is an intuitive platform designed for Bano Qabil students to connect with employers offering internships, part-time, and full-time", path: "https://ems-cloudbased.vercel.app/"}) %>
+          <%- include("./components/projects", {imageUrl: "/assets/images/project3.webp", title: "Shopify Website", para: "Conversion Suite is an all-in-one suite of Shopify applications designed to help store owners boost conversions through FOMO (fear of missing out) tactics and enhanced customer engagement. The platform enables merchants to capture customer data and reconnect through various marketing channels, ultimately driving higher profits.", path: "https://ems-cloudbased.vercel.app/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="two bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project2.webp", title: "Restaurant Management", para: "Restaurant management system streamlines operations by handling reservations, orders, inventory, and billing in one system. It improves efficiency, enhances customer service, and provides valuable insights for better decision-making", path: "https://qabil.jobs/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="three bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project3.png", title: "Employee Management", para: "The Employee Management System simplifies HR tasks by tracking employee details, performance, and attendance in one centralized platform. It streamlines recruitment, payroll, and reporting processes, enhancing overall efficiency and organizational workflow.", path: "https://ems-cloudbased.vercel.app/"}) %>
         </div>
       </div>
     </div>
@@ -132,3 +129,4 @@
 </body>
 
 </html>
+

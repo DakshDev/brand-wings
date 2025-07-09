@@ -14,10 +14,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "node": "^20.19.3"
+    "node": "^20.19.3",
+    "nodemailer": "^7.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

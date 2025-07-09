@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Footer</title>
 </head>
 <body>
@@ -12,7 +13,28 @@
 		<section class="p-20 px-10 bg-themeClr2 flex justify-center">
 			<div class="max-w-[1440px] w-full flex flex-wrap gap-10 items-center justify-center">
 				<h1 class="text-5xl text-mainClr font-semibold">Subscribe For Updates</h1>
-				<div> <input type="text" name="subscribe field" class="border border-mainClr px-4 py-2 rounded-md text-xl w-80 text-mainClr" placeholder="Enter Your Email"> <button class="secBtn text-xl capitalize">i'm interested</button> </div>
+		<div>
+   <form id="subscribeForm" class="flex w-full max-w-md">
+  <input 
+    type="email" 
+    name="email" 
+    required 
+    placeholder="Enter Your Email"
+    class="flex-grow border border-mainClr px-4 py-3 rounded-l-md text-mainClr text-base outline-none"
+  >
+  <button 
+    type="submit" 
+    id="interestedBtn" 
+    class="bg-mainClr text-white hover:bg-black transition-colors px-5 py-3 rounded-r-md flex items-center justify-center gap-2"
+  >
+    <span id="interestedText">I'm Interested</span>
+    <svg id="interestedSpinner" class="hidden w-5 h-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
+    </svg>
+  </button>
+</form>
+</div>
 			</div>
 		</section>
 		<section class="px-10 divide-y bg-themeClr2">
@@ -72,6 +94,40 @@
 			<div class="py-6 text-sm text-center text-mainClr">© 2025 Company Co. All rights reserved.</div>
 		</section>
 	</footer>
-  
+  <script>
+ document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    
+    const btn = document.getElementById('interestedBtn');
+    const btnText = document.getElementById('interestedText');
+    const btnSpinner = document.getElementById('interestedSpinner');
+
+    btn.disabled = true;
+    btnText.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    fetch('/subscribe', {
+      method: 'POST',
+      body: new URLSearchParams(formData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire('Subscribed!', 'Thank you for subscribing.', 'success');
+      form.reset();
+    })
+    .catch(err => {
+      Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
+    })
+    .finally(() => {
+      
+      btn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+    });
+  });
+</script>
 </body>
 </html>
