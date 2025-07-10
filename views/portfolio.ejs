@@ -36,12 +36,14 @@
   </style>
 </head>
 
-<body class="theme">
+<body class="theme overflow-x-hidden" id="home_bg_img">
+  <div class="blurBg"></div>
 
   <%- include("./components/header") %>
 
+  <div class="main-container">
   <!-- Swiper -->
-  <div class="swiper mySwiper">
+  <section class="swiper mySwiper h-screen">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="one bg-black w-full h-full relative">
@@ -55,7 +57,17 @@
       </div>
       <div class="swiper-slide">
         <div class="three bg-black w-full h-full relative">
-          <%- include("./components/projects", {imageUrl: "/assets/images/project3.png", title: "Employee Management System", para: "The Employee Management System simplifies HR tasks by tracking employee details, performance, and attendance in one centralized platform. It streamlines recruitment, payroll, and reporting processes, enhancing overall efficiency and organizational workflow.", path: "https://ems-cloudbased.vercel.app/"}) %>
+          <%- include("./components/projects", {imageUrl: "/assets/images/project3.webp", title: "Shopify Website", para: "Conversion Suite is an all-in-one suite of Shopify applications designed to help store owners boost conversions through FOMO (fear of missing out) tactics and enhanced customer engagement. The platform enables merchants to capture customer data and reconnect through various marketing channels, ultimately driving higher profits.", path: "https://ems-cloudbased.vercel.app/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="two bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project2.webp", title: "Restaurant Management", para: "Restaurant management system streamlines operations by handling reservations, orders, inventory, and billing in one system. It improves efficiency, enhances customer service, and provides valuable insights for better decision-making", path: "https://qabil.jobs/"}) %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="three bg-black w-full h-full relative">
+          <%- include("./components/projects", {imageUrl: "/assets/images/project3.png", title: "Employee Management", para: "The Employee Management System simplifies HR tasks by tracking employee details, performance, and attendance in one centralized platform. It streamlines recruitment, payroll, and reporting processes, enhancing overall efficiency and organizational workflow.", path: "https://ems-cloudbased.vercel.app/"}) %>
         </div>
       </div>
       <div class="swiper-slide">
@@ -81,6 +93,7 @@
     </div>
     <div style="display: none;" class="swiper-button-next"></div>
     <div style="display: none;" class="swiper-button-prev"></div>
+  </section>
   </div>
 
   <!-- Swiper JS -->
@@ -107,7 +120,7 @@
     
     // on wheel click
     let loaded = true;
-     document.addEventListener('wheel', function(event) {
+     document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
       
 
       if(!loaded) {
