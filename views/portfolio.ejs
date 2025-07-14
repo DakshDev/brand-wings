@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <title>Brand Wings | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/css/output.css">
-  <link rel="icon" href="/assets/images/fav-icon.png" type="image/png">
-  <!-- Demo styles -->
+  <link rel="stylesheet" href="/css/output.css" />
+  <link rel="icon" href="/assets/images/fav-icon.png" type="image/png" />
+
   <style>
+    /* Avoid 100vh issues on mobile */
     .swiper, .swiper-wrapper {
       width: 100vw;
-      height: 100vh;
+      height: 100dvh; /* Use dynamic viewport height */
     }
 
     .swiper-slide {
@@ -24,18 +24,24 @@
       background-size: cover;
     }
 
-    .one, .two, .three{
-        background-position: center center;
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-        background-image: url("/assets/images/darkbg.png");
-        padding: 0px 40px;
+    /* Disable background-attachment: fixed on mobile */
+    @media (max-width: 768px) {
+      .one, .two, .three {
+        background-attachment: scroll !important;
+        padding: 0 20px !important;
+      }
     }
 
+    .one, .two, .three {
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+      overflow: hidden;
+      background-image: url("/assets/images/darkbg.png");
+      padding: 0 40px;
+    }
   </style>
 </head>
-
 <body class="theme overflow-x-hidden" id="home_bg_img">
   <div class="blurBg"></div>
 
@@ -96,14 +102,17 @@
   </section>
   </div>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper", {
+    // Throttle wheel event to improve performance
+    let canScroll = true;
+    const throttleTimeout = 150; // ms delay between scrolls
+
+    const swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
-      effect: "fade",
+      effect: window.innerWidth < 640 ? "slide" : "fade",
+      speed: 600,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -112,46 +121,31 @@
         el: ".swiper-pagination",
         clickable: true,
       },
+      lazy: {
+        loadPrevNext: true,
+      },
+      on: {
+        resize() {
+          swiper.params.effect = window.innerWidth < 640 ? "slide" : "fade";
+          swiper.update();
+        }
+      }
     });
-    
-    
-    
-    
-    
-    // on wheel click
-    let loaded = true;
-     document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
-      
 
-      if(!loaded) {
-        setTimeout(() => {
-          loaded = true;
-        }, 50)
-        return;
-      };
+    document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
+      if (!canScroll) return;
+      canScroll = false;
 
       if (event.deltaY < 0) {
-        // deltaY > 0 means scrolling down
-        const nextButton = document.querySelector('.swiper-button-prev');
-        if (nextButton) {
-          nextButton.click(); // Simulate click
-          loaded = false;
-        }
+        swiper.slidePrev();
+      } else if (event.deltaY > 0) {
+        swiper.slideNext();
       }
-       
-      if (event.deltaY > 0) {
-        // deltaY > 0 means scrolling down
-        const nextButton = document.querySelector('.swiper-button-next');
-        if (nextButton) {
-          nextButton.click(); // Simulate click
-          loaded = false;
-        }
-      }
-    
-  }, { passive: true });
-    
+
+      setTimeout(() => {
+        canScroll = true;
+      }, throttleTimeout);
+    }, { passive: true });
   </script>
 </body>
-
 </html>
-
