@@ -1428,14 +1428,14 @@ html, body{
 }
 
 #home_bg_img{
-  background-image: url("/assets/images/background.jpg");
+  background-image: url("/assets/images/background.webp");
   background-position: center top;
   background-attachment: fixed;
   background-size: cover;
 }
 
 #contact_bg_img{
-  background-image: url("/assets/images/contact-img.jpg");
+  background-image: url("/assets/images/contact-img.webp");
   background-position: center bottom;
   background-attachment: fixed;
   background-size: cover;
@@ -1449,7 +1449,7 @@ html, body{
 }
 
 #about_bg_img{
-  background-image: url("/assets/images/service-img.webp");
+  background-image: url("/assets/images/about-img.webp");
   background-position: center top;
   background-attachment: fixed;
   background-size: cover;
