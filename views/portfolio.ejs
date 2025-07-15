@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <title>Brand Wings | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/css/output.css" />
   <link rel="icon" href="/assets/images/fav-icon.png" type="image/png" />
 
   <style>
-    /* Avoid 100vh issues on mobile */
     .swiper, .swiper-wrapper {
       width: 100vw;
-      height: 100dvh; /* Use dynamic viewport height */
+      height: 100dvh;
     }
 
     .swiper-slide {
@@ -24,34 +23,49 @@
       background-size: cover;
     }
 
-    /* Disable background-attachment: fixed on mobile */
     @media (max-width: 768px) {
+       .swiper,
+  .swiper-wrapper,
+  .swiper-slide {
+    height: auto !important;
+  }
       .one, .two, .three {
         background-attachment: scroll !important;
         padding: 0 20px !important;
+         background-position: center center !important;
       }
-    }
 
-    .one, .two, .three {
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: cover;
-      overflow: hidden;
-      background-image: url("/assets/images/darkbg.png");
-      padding: 0 40px;
+    .mobile-layout .one,
+    .mobile-layout .two,
+    .mobile-layout .three {
+      height: auto !important;
+      min-height: auto !important;
     }
+  }
+
+
+      .one, .two, .three {
+    background-attachment: scroll !important;
+    padding: 0 20px !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
   </style>
 </head>
+
 <body class="theme overflow-x-hidden" id="home_bg_img">
   <div class="blurBg"></div>
-
   <%- include("./components/header") %>
 
   <div class="main-container">
-  <!-- Swiper -->
-  <section class="swiper mySwiper h-screen">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
+
+    <!-- Desktop Layout (Swiper) -->
+    <div class="desktop-layout hidden md:block">
+      <section class="swiper mySwiper h-screen">
+        <div class="swiper-wrapper">
+
+               <div class="swiper-slide">
         <div class="one bg-black w-full h-full relative">
           <%- include("./components/projects", {imageUrl: "/assets/images/project1.jpg", title: "Job Portal", para: "The Jobs Portal is an intuitive platform designed for students and job seekers to connect with employers offering internships, part-time, and full-time", path: "https://ejobportal.pk/"}) %>
         </div>
@@ -64,11 +78,6 @@
       <div class="swiper-slide">
         <div class="three bg-black w-full h-full relative">
           <%- include("./components/projects", {imageUrl: "/assets/images/project3.webp", title: "Shopify Website", para: "Conversion Suite is an all-in-one suite of Shopify applications designed to help store owners boost conversions through FOMO (fear of missing out) tactics and enhanced customer engagement. The platform enables merchants to capture customer data and reconnect through various marketing channels, ultimately driving higher profits.", path: "https://ems-cloudbased.vercel.app/"}) %>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="two bg-black w-full h-full relative">
-          <%- include("./components/projects", {imageUrl: "/assets/images/project2.webp", title: "Restaurant Management", para: "Restaurant management system streamlines operations by handling reservations, orders, inventory, and billing in one system. It improves efficiency, enhances customer service, and provides valuable insights for better decision-making", path: "https://qabil.jobs/"}) %>
         </div>
       </div>
       <div class="swiper-slide">
@@ -99,53 +108,84 @@
     </div>
     <div style="display: none;" class="swiper-button-next"></div>
     <div style="display: none;" class="swiper-button-prev"></div>
-  </section>
+      </section>
+    </div>
+
+    <!-- Mobile Layout (stacked) -->
+    <div class="mobile-layout block md:hidden bg-black bg-cover bg-center" style="background-image: url('/assets/images/darkbg.png');">
+      <div class="one bg-black w-full py-10 relative ">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project1.jpg", title: "Job Portal", para: "The Jobs Portal is an intuitive platform designed for students and job seekers to connect with employers offering internships, part-time, and full-time", path: "https://ejobportal.pk/" }) %>
+      </div>
+      <div class="two bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project2.webp", title: "Restaurant Management System", para: "Restaurant management system streamlines operations by handling reservations, orders, inventory, and billing in one system. It improves efficiency, enhances customer service, and provides valuable insights for better decision-making", path: "https://qabil.jobs/" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project3.webp", title: "Shopify Website", para: "Conversion Suite is an all-in-one suite of Shopify applications designed to help store owners boost conversions through FOMO (fear of missing out) tactics and enhanced customer engagement. The platform enables merchants to capture customer data and reconnect through various marketing channels, ultimately driving higher profits.", path: "https://ems-cloudbased.vercel.app/" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project3.png", title: "Employee Management", para: "The Employee Management System simplifies HR tasks by tracking employee details, performance, and attendance in one centralized platform. It streamlines recruitment, payroll, and reporting processes, enhancing overall efficiency and organizational workflow.", path: "https://ems-cloudbased.vercel.app/" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project4.png", title: "Wedding Portal", para: "A nationwide platform that lists verified wedding vendors with moderated profiles, image and video galleries, and customer reviews.The portal includes dedicated dashboards for users, vendors, and administrators to manage interactions and content efficiently.Designed to streamline the vendor discovery and booking process for weddings.", path: "http://wedding.aabizsol.com" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project5.png", title: "You Think We Wrap", para: "An online shopping platform offering a seamless buying experience along with unique product packaging and gift-wrapping options.The portal includes user and admin dashboards for managing orders, inventory, and custom wrap preferences.Designed to enhance customer satisfaction through personalized presentation and delivery.", path: "http://ytww.aabizsol.com" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project6.png", title: "NestChat App", para: "NestChat is a real-time MERN chat app featuring email login, messaging, and built-in audio/video calls.Designed for seamless, instant communication with rich multimedia support.", path: "https://audio-video-calling-app-frontend.onrender.com/sign-in" }) %>
+      </div>
+      <div class="three bg-black w-full py-10 relative">
+        <%- include("./components/projects", { imageUrl: "/assets/images/project7.png", title: "Fieldfusion SaaS", para: "A SaaS startup that provides field service management software for tasks like scheduling customer visits and deliveries, vehicle tracking, and route optimization.", path: "https://fieldfusion.io/" }) %>
+      </div>
+    </div>
+
   </div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   <script>
-    // Throttle wheel event to improve performance
-    let canScroll = true;
-    const throttleTimeout = 150; // ms delay between scrolls
-
-    const swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      effect: window.innerWidth < 640 ? "slide" : "fade",
-      speed: 600,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      lazy: {
-        loadPrevNext: true,
-      },
-      on: {
-        resize() {
-          swiper.params.effect = window.innerWidth < 640 ? "slide" : "fade";
-          swiper.update();
+    if (window.innerWidth >= 768) {
+      const swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        speed: 600,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        lazy: {
+          loadPrevNext: true,
+        },
+        on: {
+          resize() {
+            swiper.params.effect = window.innerWidth < 640 ? "slide" : "fade";
+            swiper.update();
+          }
         }
-      }
-    });
+      });
 
-    document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
-      if (!canScroll) return;
-      canScroll = false;
+      let canScroll = true;
+      const throttleTimeout = 150;
 
-      if (event.deltaY < 0) {
-        swiper.slidePrev();
-      } else if (event.deltaY > 0) {
-        swiper.slideNext();
-      }
+      document.querySelector(".mySwiper").addEventListener('wheel', function(event) {
+        if (!canScroll) return;
+        canScroll = false;
 
-      setTimeout(() => {
-        canScroll = true;
-      }, throttleTimeout);
-    }, { passive: true });
+        if (event.deltaY < 0) {
+          swiper.slidePrev();
+        } else if (event.deltaY > 0) {
+          swiper.slideNext();
+        }
+
+        setTimeout(() => {
+          canScroll = true;
+        }, throttleTimeout);
+      }, { passive: true });
+    }
   </script>
 </body>
 </html>
