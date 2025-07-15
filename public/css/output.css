@@ -727,10 +727,6 @@ video {
   height: 88%;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -753,10 +749,6 @@ video {
 }
 
 .min-h-screen {
-  min-height: 100vh;
-}
-
-.min-h-\[100vh\] {
   min-height: 100vh;
 }
 
